@@ -49,6 +49,9 @@ export default new Vuex.Store({
         COMPLETED_STATU_TODO(state,todo){
             todo.completed = !todo.completed
         },
+        UPDATE_TODO_TITLE(state,todo){
+            console.log(todo)
+        },
         DELETE_COMPLETED_TODO(state){
             state.todos = state.todos.filter(todo => !todo.completed)
         }
@@ -67,6 +70,9 @@ export default new Vuex.Store({
         },
         deletAllTodoCompleted({commit}){
             commit ('DELETE_COMPLETED_TODO')
+        },
+        updateTodo({commit},todo){
+            commit('UPDATE_TODO_TITLE',todo)
         }
     }
 })
